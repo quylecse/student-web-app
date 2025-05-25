@@ -9,8 +9,27 @@ import {
   ValidationErrorLoc,
 } from '../../types/student';
 
-const API_BASE_URL = '/api';
+/*
+=======================================================================================================
+**********************************URL-SWITCH FÜR CLIENT- UND SERVER- COMPONENTEN************************
+=======================================================================================================
+*/
+// API-base-url bestimmen, um Logik für Client und Server parallel nutzen zu können
+// CORS-Fehler behandeln
+let API_BASE_URL: string;
+if (typeof window !== 'undefined') {
+  //client-side
+  API_BASE_URL = '/api';
+} else {
+  //server-side
+  API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL || 'http://localhost:8000'; // Port 8000 hat keine Rolle
+}
 
+/*
+=======================================================================================================
+**********************************FEHLER-BEHANDLUNG********************************************************
+=======================================================================================================
+*/
 // Hilfsfunktion zur Verarbeitung von API-Antworten
 async function handleApiResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -23,6 +42,12 @@ async function handleApiResponse<T>(response: Response): Promise<T> {
   }
   return response.json();
 }
+
+/*
+=======================================================================================================
+**********************************CRUD METHODE********************************************************
+=======================================================================================================
+*/
 
 // 1. GET /students (Liste aller Studierenden)
 export async function getStudents(): Promise<StudentRead[]> {
