@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div style={{ fontFamily: 'sans-serif', margin: '2rem', padding: '1rem', border: '1px solid #ccc', borderRadius: '8px', maxWidth: '800px', margin: '2rem auto' }}>
+    <div style={{ fontFamily: 'sans-serif', margin: '2rem auto', padding: '1rem', border: '1px solid #ccc', borderRadius: '8px', maxWidth: '800px'}}>
       <h1 style={{ textAlign: 'center', color: '#333', fontSize: '2em', marginBottom: '1.5rem' }}>
         Willkommen zur Studentenverwaltungsanwendung
       </h1>
