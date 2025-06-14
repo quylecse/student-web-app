@@ -3,6 +3,8 @@ Wir haben uns als Gruppe für die Nutzung von React und Next.js entschieden, da 
 
 ## Architektur
 Ich habe um dies zu erstellen Draw.io genutzt und folgendes erstellt:
+![Screenshot 2025-05-31 151820](https://github.com/user-attachments/assets/d2e4f4bf-c902-480a-a8f7-41d6778952ae)
+
 
 ## Lessons Learned
 Untereinander hatten wir keine Probleme, sondern eher ein wenig zu wenig Kommunikation. Wir wussten voneinander nicht, wer wann was macht und hatten unsere Probleme teilweise auch damit. Jeder hat immer seinen Fortschritt in die Gruppe geuploaded, sowie auch auf github sichtbar gemacht. Auf Grund der hervorstehenden Klausurphase hat jeder in seinem eigenen Tempo gearbeitet, was eigentlich kein Problem darstellt nur am Ende zu Stress führen kann, falls die Abgabe nicht beendet wurde.
