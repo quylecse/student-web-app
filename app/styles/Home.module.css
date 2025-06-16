@@ -160,6 +160,7 @@ html {
     padding-bottom: 0.5rem;
 }
 
+
 .buttonGrid {
     display: grid;
     /* Standardmäßig für große Bildschirme, mehrere Spalten mit Mindestbreite 200px */
@@ -307,3 +308,177 @@ html {
         /* Falls Sie sicher 1 Spalte auf sehr kleinen Bildschirmen wollen, verwenden Sie: grid-template-columns: 1fr; */
     }
 }
+
+/* Nachrichten */
+.errorMessage {
+    color: #e53935;
+    margin-bottom: 1rem;
+}
+
+.successMessage {
+    color: #43a047;
+    margin-bottom: 1rem;
+}
+
+
+/* Studentendaten */
+.studentDetailContainer {
+    max-width: 40rem; 
+    margin: 0 auto;
+    padding: 1.5rem; 
+    background-color: #fffef9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.studentInfo {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    color: #2d2d2d;
+    font-size: 1.1rem;
+    line-height: 2.0;
+}
+  
+.studentInfo p {
+    margin: 0.4rem 0;
+}
+  
+.studentInfo strong {
+    color: #d84315;
+    font-weight: 600;
+}
+
+
+/* Module */
+.tableHeader {
+    background-color: #000;
+    color: #d84315;
+}
+
+.moduleList {
+    color: black;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.moduleListItem {
+    color: black;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    list-style-type: disc; 
+}
+
+.moduleListItem button {
+    margin-left: 1rem;
+}
+
+.removeButton {
+    color: #dc2626;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+  
+.removeButton:hover {
+    color: #a11b1b;
+}
+
+.addModuleButton {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+.addModuleButton:hover {
+    background-color: #1e40af;
+}
+
+.cancelButton {
+    background-color: #6b7280;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+  
+.cancelButton:hover {
+    background-color: #4b5563;
+}
+
+/* ModuleForm */
+.headerModuleForm{
+    color: #d84315;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    
+}
+
+.addModuleForm {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+    display: block;
+}
+
+.formLabel {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #2d2d2d;
+}
+
+.formInput {
+    padding-left: 0.5rem;
+    height: 3rem;
+    width: 10rem;
+    border: 2px solid black;  
+    border-color: black;     
+    box-shadow: black;
+    border-radius: 4px;
+    color: black;
+}
+
+.formInputWide{
+    width: 18rem;
+}
+
+.formInput:focus {
+    outline: 2px solid rgb(37, 99, 235); 
+    outline-offset: 2px;        
+    box-shadow: 0 0 0 4px rgb(30, 70, 179, 0.25);
+    
+}
+
+.formError {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.formButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+  
+

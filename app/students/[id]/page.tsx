@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { getStudentById, addModuleToStudent, removeModuleFromStudent } from '../../../lib/services/student-service';
 import { StudentRead, ModuleCreate } from '@/types/student';
+import styles from '../../styles/Home.module.css';
 
 export default function StudentDetailPage() {
     const { id } = useParams();
@@ -48,11 +49,11 @@ export default function StudentDetailPage() {
     }, [formError]);
 
     if (loading) {
-        return <div className="max-w-2xl mx-auto p-6">Laden...</div>;
+        return <div className={styles.mainContent}>Laden...</div>;
     }
 
     if (apiError || !student) {
-        return <div className="max-w-2xl mx-auto p-6 text-red-500">{apiError || 'Student nicht gefunden'}</div>;
+        return <div className={styles.mainContent}>{apiError || 'Student nicht gefunden'}</div>;
     }
 
      // Funktion zum Hinzufügen eines Moduls
@@ -108,27 +109,23 @@ export default function StudentDetailPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">Studentendaten</h1>
+        <div className={styles.studentDetailContainer}>
+            <h1 className={styles.sectionHeading}>Studentendaten</h1>
 
              {/* Allgemeine Informationen */}
-            <div className="mb-6">
+            <div className={styles.studentInfo}>
                 <p><strong>Vorname:</strong> {student.first_name}</p>
                 <p><strong>Nachname:</strong> {student.last_name}</p>
                 <p><strong>Matrikelnummer:</strong> {student.matriculation_number}</p>
-            </div>
-
-            {/* Modul-Liste */}
-            <div className="mb-6">
-                <h2 className="text-lg font-bold mb-2">Module</h2>
+                <p><strong>Module: </strong></p>
                 {student.modules && student.modules.length > 0 ? (
-                    <ul className="list-disc pl-5">
+                    <ul className={styles.moduleList}>
                         {student.modules.map((module, index) => (
-                            <li key={index} className="mb-2">
+                            <li key={index} className={styles.moduleListItem}>
                                 {`${module.code}: ${module.name}`}
                                 <button
                                     onClick={() => handleRemoveModule(index)}
-                                    className="ml-4 bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700"
+                                    className={styles.removeButton}
                                 >
                                     Entfernen
                                 </button>
@@ -145,7 +142,7 @@ export default function StudentDetailPage() {
                 {!showAddModuleForm && (
                     <button
                         onClick={() => setShowAddModuleForm(true)}
-                        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                        className={styles.addModuleButton}
                     >
                         + Modul hinzufügen
                     </button>
@@ -153,11 +150,11 @@ export default function StudentDetailPage() {
 
                 {/* Formular zum Hinzufügen eines Moduls */}
                 {showAddModuleForm && (
-                    <div className="p-4 border rounded mt-4">
-                        <h2 className="text-lg font-medium mb-4">Neues Modul hinzufügen</h2>
+                    <div className={styles.addModuleForm}>
+                        <h2 className={styles.headerModuleForm}>Neues Modul hinzufügen</h2>
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="code" className="block text-sm font-medium text-black">
+                                <label htmlFor="code" className={styles.formLabel}>
                                     Modulcode
                                 </label>
                                 <input
@@ -165,11 +162,11 @@ export default function StudentDetailPage() {
                                     name="code"
                                     value={newModule.code}
                                     onChange={(e) => setNewModule((prev) => ({ ...prev, code: e.target.value }))}
-                                    className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                                    className={styles.formInput}
                                 />
                             </div>
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-black">
+                                <label htmlFor="name" className={styles.formLabel}>
                                     Modulname
                                 </label>
                                 <input
@@ -177,16 +174,16 @@ export default function StudentDetailPage() {
                                     name="name"
                                     value={newModule.name}
                                     onChange={(e) => setNewModule((prev) => ({ ...prev, name: e.target.value }))}
-                                    className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                                    className={`${styles.formInput} ${styles.formInputWide}`}
                                 />
                             </div>
                             {/* Fehleranzeige im Formular */}
-                            {formError && <div className="text-red-500 text-sm">{formError}</div>}
+                            {formError && <div className={styles.formError}>{formError}</div>}
                             
-                            <div className="space-x-4">
+                            <div className={styles.formButtons}>
                                 <button
                                     onClick={handleAddModule}
-                                    className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className={styles.addModuleButton}
                                 >
                                     Modul hinzufügen
                                 </button>
@@ -196,7 +193,7 @@ export default function StudentDetailPage() {
                                         setNewModule({ name: '', code: '' }); 
                                         setFormError(null); 
                                     }}
-                                    className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-700"
+                                    className={styles.cancelButton}
                                 >
                                     Abbrechen
                                 </button>
@@ -206,7 +203,7 @@ export default function StudentDetailPage() {
                 )}
             </div>
             {/* Allgemeiner API-Fehler */}
-            {apiError && <div className="text-red-500 mt-4">{apiError}</div>}
+            {apiError && <div className={styles.errorMessage}>{apiError}</div>}
         </div>
     );
 }
