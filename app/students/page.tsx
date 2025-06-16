@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { getStudents } from '../../lib/services/student-service';
 import { StudentRead } from '@/types/student';
 import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 
 export default function StudentsPage() {
     const [students, setStudents] = useState<StudentRead[]>([]);
@@ -34,27 +35,27 @@ export default function StudentsPage() {
     }
 
     return (
-        <div className="max-w-2xl mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">Studentenliste</h1>
+        <div className={styles.studentDetailContainer}>
+            <h1 className={styles.sectionHeading}>Studentenliste</h1>
             {students.length === 0 ? (
                 <p className="text-gray-500">Keine Studenten vorhanden.</p>
             ) : (
-                <table className="w-full border-collapse">
-                    <thead>
-                        <tr className="bg-black">
-                            <th className="border p-2 text-left">Name</th>
-                            <th className="border p-2 text-left">Matrikelnummer</th>
+                <table className={styles.table}>
+                    <thead className={styles.tableHead}>
+                        <tr>
+                            <th>Name</th>
+                            <th>Matrikelnummer</th>
                         </tr>
                     </thead>
                     <tbody>
                         {students.map((student) => (
-                            <tr key={student.id} className="border-t">
-                                <td className="border p-2">
-                                    <Link href={`/students/${student.id}`} className="text-blue-600 hover:underline">
-                                        {`${student.first_name} ${student.last_name}`}
+                            <tr key={student.id}>
+                                <td className={styles.tableCellLink}>
+                                    <Link href={`/students/${student.id}`} className={styles.navLink}>
+                                        {`${student.first_name},  ${student.last_name}`}
                                     </Link>
                                 </td>
-                                <td className="border p-2">{student.matriculation_number}</td>
+                                <td className="text-black">{student.matriculation_number}</td>
                             </tr>
                         ))}
                     </tbody>

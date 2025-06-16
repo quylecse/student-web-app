@@ -323,10 +323,10 @@ html {
 
 /* Studentendaten */
 .studentDetailContainer {
-    max-width: 40rem; 
+    max-width: 60rem; 
     margin: 0 auto;
     padding: 1.5rem; 
-    background-color: #fffef9;
+    background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
     min-height: 100vh;
@@ -353,11 +353,6 @@ html {
 
 
 /* Module */
-.tableHeader {
-    background-color: #000;
-    color: #d84315;
-}
-
 .moduleList {
     color: black;
     list-style-type: disc;
@@ -478,6 +473,33 @@ html {
 .formButtons {
     display: flex;
     gap: 1rem;
+}
+
+/* Tabelle */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td, 
+.table th,
+.table tr {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: white;
+}
+
+.tableHead {
+    color: #d84315;           
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+}
+
+.tableCellLink {
+    padding: 0.5rem;
+    border: 1px solid black;
+    background-color: white;
 }
 
   
