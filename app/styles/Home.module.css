@@ -1,18 +1,24 @@
 /* app/styles/Home.module.css */
 
+/* Import moderne Google-Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 /* Sanftes Scrollen für Anker-Links sicherstellen */
 html {
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff8f0;
+    color: #2d2d2d;
 }
 
+/* Layout Container */
 .homepageContainer {
-    font-family: sans-serif;
-    color: #333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding-top: 70px;
     /* Dieses Padding beibehalten, damit Inhalte nicht vom fixierten Navbar verdeckt werden */
+    background-color: #fffef9;
 }
 
 /* Navbar */
@@ -40,12 +46,13 @@ html {
 .navBrand {
     font-size: 1.4em;
     font-weight: 700;
+    color: #e63946;
     white-space: nowrap;
 }
 
 .navBrand a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
     transition: color 0.2s ease-in-out;
 }
 
@@ -55,14 +62,11 @@ html {
 
 .navbarNav {
     list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 2rem;
-    /* Abstand zwischen den Hauptmenüpunkten */
-    justify-content: flex-end;
-    flex-grow: 1;
-    flex-wrap: nowrap;
 }
 
 .navItem {
@@ -72,7 +76,7 @@ html {
 
 .navLink {
     text-decoration: none;
-    color: #555;
+    color: #333;
     font-size: 1em;
     font-weight: 500;
     padding: 0.5rem 0.8rem;
@@ -84,7 +88,8 @@ html {
 }
 
 .navLink:hover {
-    color: #007bff;
+    background-color: #ffe082;
+    color: #d84315;
 }
 
 
@@ -127,12 +132,12 @@ html {
 }
 
 .heroTitle {
-    color: #fff;
+    color: #fffde7;
     font-size: 3em;
     text-align: center;
     margin: 0;
     padding: 0 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Hauptinhalt */
@@ -149,7 +154,7 @@ html {
 
 .sectionHeading {
     font-size: 1.8em;
-    color: #333;
+    color: #d84315;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #eee;
     padding-bottom: 0.5rem;
@@ -189,12 +194,12 @@ html {
 .buttonIcon {
     font-size: 2.5em;
     margin-bottom: 0.8rem;
-    color: #007bff;
+    color: #f77f00;
 }
 
 /* Footer */
 .footer {
-    background-color: #f8f8f8;
+    background-color: #fff3e0;
     padding: 1.5rem 2rem;
     border-top: 1px solid #eee;
     text-align: center;
