@@ -3,6 +3,13 @@
 import { useState , useEffect } from 'react';
 import { createStudent, addModuleToStudent , getStudents } from '../../../lib/services/student-service';
 import { StudentCreate, ModuleCreate , StudentRead } from '@/types/student';
+import Link from 'next/link';
+import styles from '../../styles/Home.module.css';
+import {
+  FaUserGraduate, // Symbol für Student Management
+  FaInfoCircle,   // Symbol für Über Uns / Team
+  FaEnvelope,
+} from 'react-icons/fa';
 
 export default function NewStudentPage() {
     const [formData, setFormData] = useState<StudentCreate>({
@@ -82,7 +89,6 @@ export default function NewStudentPage() {
         for (let module of modules) {
             if (module.name === '') return 'Modulname ist erforderlich';
             if (module.code === '') return 'Modulcode ist erforderlich';
-            //if (module.credits <= 0) return 'Credits müssen größer als 0 sein';
         }
         return null;
     };
@@ -119,16 +125,30 @@ export default function NewStudentPage() {
     };
 
     return (
-      <div className="w-screen h-screen bg-[#fffef9] flex items-center justify-center p-6 overflow-y-auto text-black">
-
-        <div className="max-w-2xl w-full bg-[#fffef9] rounded-lg shadow-md p-6">
-        <h1 className="text-2xl font-bold mb-6 text-[#d84315]">Neues Studentenprofil hinzufügen</h1>
-        {apiError && <div className="text-red-500 mb-4">{apiError}</div>}
-        {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
-        <form onSubmit={handleSubmit} className="space-y-6">
-            {/* First Name */}
+      <div className={styles.homepageContainer}>
+        <nav className={styles.navbar}>
+                    <div className={styles.navbarContainer}>
+                        <div className={styles.navBrand}>
+                            <Link href="/">Student Management</Link>
+                        </div>
+                        <ul className={styles.navbarNav}>
+                            <li className={styles.navItem}>
+                            <Link href="/team" className={styles.navLink}>
+                                <FaInfoCircle className={styles.navIcon} /> About Us
+                            </Link>
+                            </li>
+                        </ul>
+                    </div>
+          </nav>
+        <div className={styles.mainContent}>
+          <h1 className={styles.sectionHeading}>Neues Studentenprofil hinzufügen</h1>
+          {apiError && <div className={styles.errorMessage}>{apiError}</div>}
+          {successMessage && <div className={styles.successMessage}>{successMessage}</div>}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            
+            {/* Vorname */}
             <div>
-              <label htmlFor="first_name" className="block text-sm font-medium">
+              <label htmlFor="first_name" className={styles.formLabel}>
                 Vorname
               </label>
               <input
@@ -136,13 +156,13 @@ export default function NewStudentPage() {
                 name="first_name"
                 value={formData.first_name}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                className={styles.formInputDaten}
               />
             </div>
     
-            {/* Last Name */}
+            {/* Nachname */}
             <div>
-              <label htmlFor="last_name" className="block text-sm font-medium">
+              <label htmlFor="last_name" className={styles.formLabel}>
                 Nachname
               </label>
               <input
@@ -150,13 +170,13 @@ export default function NewStudentPage() {
                 name="last_name"
                 value={formData.last_name}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                className={styles.formInputDaten}
               />
             </div>
     
-            {/* Matriculation Number */}
+            {/* Matrikelnnumber */}
             <div>
-              <label htmlFor="matriculation_number" className="block text-sm font-medium">
+              <label htmlFor="matriculation_number" className={styles.formLabel}>
                 Matrikelnummer
               </label>
               <input
@@ -164,17 +184,17 @@ export default function NewStudentPage() {
                 name="matriculation_number"
                 value={formData.matriculation_number}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                className={styles.formInputDaten}
               />
             </div>
     
             {/* Modules */}
             <div>
-              <h2 className="text-lg font-medium mb-4">Module</h2>
+              <h2 className={styles.formLabel}>Module</h2>
               {modules.map((module, index) => (
                 <div key={index} className="border p-4 rounded-md mb-4 space-y-4">
                   <div>
-                    <label htmlFor={`module_code_${index}`} className="block text-sm font-medium">
+                    <label htmlFor={`module_code_${index}`} className={styles.formLabel}>
                       Modulcode
                     </label>
                     <input
@@ -182,11 +202,11 @@ export default function NewStudentPage() {
                       name="code"
                       value={module.code}
                       onChange={(e) => handleModuleChange(index, e)}
-                      className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                      className={styles.formInputDaten}
                     />
                   </div>
                   <div>
-                    <label htmlFor={`module_name_${index}`} className="block text-sm font-medium text-black">
+                    <label htmlFor={`module_name_${index}`} className={styles.formLabel}>
                       Modulname
                     </label>
                     <input
@@ -194,14 +214,10 @@ export default function NewStudentPage() {
                       name="name"
                       value={module.name}
                       onChange={(e) => handleModuleChange(index, e)}
-                      className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                      className={styles.formInputDaten}
                     />
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => removeModule(index)}
-                    className="text-red-500 hover:text-red-700"
-                  >
+                  <button type="button" onClick={() => removeModule(index)} className="text-red-500 hover:text-red-700">
                     Modul entfernen
                   </button>
                 </div>
@@ -215,17 +231,27 @@ export default function NewStudentPage() {
               </button>
             </div>
     
-            {/* Submit Button */}
+            {/* Speichern Button */}
             <div>
               <button
                 type="submit"
-                className="w-full bg-[#d84315] text-white py-2 px-4 rounded-md hover:bg-[#a11b1b] focus:outline-none focus:ring-2 focus:ring-[#a11b1b]"
+                className={"w-full bg-[#d84315] text-white py-2 px-4 rounded-md hover:bg-[#a11b1b] focus:outline-none focus:ring-2 focus:ring-[#a11b1b]"}
               >
-                Save
+                Speichern
               </button>
             </div>
           </form>
         </div>
+        <footer className={styles.footer}>
+            <div className={styles.footerLinks}>
+            <Link href="/team">
+                <FaInfoCircle className={styles.footerIcon} /> Team
+            </Link>
+            <Link href="/contact">
+                <FaEnvelope className={styles.footerIcon} /> Kontakt
+            </Link>
+            </div>
+        </footer>
       </div>
     );
 
