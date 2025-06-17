@@ -160,9 +160,11 @@ html {
 
 
 .buttonGrid {
-    display: grid;
-    /* Standardmäßig für große Bildschirme, mehrere Spalten mit Mindestbreite 200px */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
     gap: 1.5rem;
 }
 
@@ -278,7 +280,10 @@ html {
 
     .buttonGrid {
         /* Erlaubt 2 Spalten mit kleineren Mindestbreiten auf Tablets und größeren Smartphones */
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
     }
 
     .actionButton {
@@ -322,7 +327,7 @@ html {
 /* Studentendaten */
 .studentInfo {
     border: 1px solid #ddd;
-    border-radius: 0.5rem; 
+    border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     width: 600px;
     white-space: normal;
@@ -444,18 +449,20 @@ html {
     border-radius: 0.5rem;
     color: black;
 }
+
 .formInputDaten {
     width: 100%;
     border: 1px solid #887f7f;
-    border-radius: 0.5rem;        
+    border-radius: 0.5rem;
     padding: 0.5rem;
     color: black;
 }
-  
+
 .formInputDaten:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #3061b580; /* focus:ring-indigo-500 */
-  }
+    box-shadow: 0 0 0 3px #3061b580;
+    /* focus:ring-indigo-500 */
+}
 
 .formInputWide {
     width: 18rem;
@@ -492,7 +499,7 @@ html {
     border: 1px solid rgb(0, 0, 0);
     padding: 0.5rem;
     text-align: left;
-    background-color:#fffef9;
+    background-color: #fffef9;
 }
 
 .tableHead {

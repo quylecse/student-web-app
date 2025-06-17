@@ -7,8 +7,6 @@ import { useRouter } from 'next/navigation'; // useRouter bleibt erhalten, da Ne
 
 import styles from './styles/Home.module.css'; // Stelle sicher, dass der CSS-Pfad korrekt ist
 import {
-  FaUserGraduate, // Symbol für Student Management
-  FaBoxes,        // Symbol für Modulverwaltung
   FaInfoCircle,   // Symbol für Über Uns / Team
   // Weitere Symbole bleiben für Buttons im Hauptinhalt und Footer erhalten
   FaList, FaPlus, FaSearch, FaEdit, FaTrash, FaBook,
@@ -30,12 +28,6 @@ const HomePage: React.FC = () => {
             <Link href="/">Home</Link>
           </div>
           <ul className={styles.navbarNav}>
-            {/* Abschnitt Student Management: Verlinkt zur ID des Abschnitts auf derselben Seite */}
-            <li className={styles.navItem}>
-              <Link href="#student-management" className={styles.navLink}>
-                <FaUserGraduate className={styles.navIcon} /> Student Management
-              </Link>
-            </li>
             <li className={styles.navItem}>
               <Link href="/team" className={styles.navLink}>
                 <FaInfoCircle className={styles.navIcon} /> Über uns
@@ -56,27 +48,27 @@ const HomePage: React.FC = () => {
           className={styles.heroImage}
         />
         <div className={styles.heroOverlay}>
-          <h1 className={styles.heroTitle}>Welcome to Student Information Management</h1>
-        </div>
+          <h1 className={styles.heroTitle}>Willkommen beim Studierendeninformationssystem</h1>        </div>
       </div>
 
       {/* Hauptinhalt */}
       <main className={styles.mainContent}>
         {/* Abschnitt Studentenverwaltung: ID wurde HINZUGEFÜGT */}
         <section id="student-management" className={styles.section}>
-          <h2 className={styles.sectionHeading}>Manage Students</h2>
+          <h2 className={styles.sectionHeading}>Studierende verwalten</h2>
           <div className={styles.buttonGrid}>
             <Link href="/students" className={styles.actionButton}>
               <FaList className={styles.buttonIcon} />
-              <span>List Students</span>
+              <span>Studierende auflisten</span>
             </Link>
             <Link href="/students/new" className={styles.actionButton}>
               <FaPlus className={styles.buttonIcon} />
-              <span>Add Student</span>
+              <span>Studierende hinzufügen</span>
             </Link>
           </div>
         </section>
       </main>
+
 
       {/* Fußzeile */}
       <footer className={styles.footer}>
@@ -87,9 +79,10 @@ const HomePage: React.FC = () => {
           <Link href="/contact">
             <FaEnvelope className={styles.footerIcon} /> Kontakt
           </Link>
+
         </div>
         <p className={styles.copyright}>
-          &copy;2025 Gruppe 16. Alle Rechte vorbehalten.
+          &copy;2024 Student Management Team.
         </p>
       </footer>
     </div>
