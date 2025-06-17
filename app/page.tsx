@@ -81,7 +81,7 @@ const HomePage: React.FC = () => {
               <FaPlus className={styles.buttonIcon} />
               <span>Add Student</span>
             </Link>
-            <Link href="/students/show" className={styles.actionButton}>
+            <Link href="/students/show-student-by-id" className={styles.actionButton}>
               <FaSearch className={styles.buttonIcon} />
               <span>Show Student by ID</span>
             </Link>

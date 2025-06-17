@@ -57,13 +57,13 @@ export default function StudentsPage() {
                     <thead className={styles.tableHead}>
                         <tr>
                             <th>Name <button onClick={toggleSortOrder} className=" px-2 py-0.5 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
-                            sort
+                                sort
                             </button> </th>
                             <th>Matrikelnummer</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {sortedStudents.map((student) => (
+                        {sortedStudents.map((student) => (
                             <tr key={student.id}>
                                 <td className={styles.tableCellLink}>
                                     <Link href={`/students/${student.id}`} className={styles.navLink}>

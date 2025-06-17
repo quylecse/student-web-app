@@ -86,7 +86,10 @@ export async function getStudentById(studentId: number): Promise<StudentRead> {
     const student: StudentRead = await handleApiResponse(response);
     return student;
   } catch (error: any) {
-    console.error(`Fehler beim Abrufen des Studierenden mit ID ${studentId}:`, error.message);
+    if (error instanceof Error && error.message.startsWith('API Error (404)')) {
+      throw new Error(`Student mit ID ${studentId} existiert nicht.`);
+    }
+    console.error(`Fehler beim Abrufen des Studierenden mit ID ${studentId}:`, error.message); // Für andere Fehler
     throw error;
   }
 }

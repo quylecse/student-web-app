@@ -69,10 +69,7 @@ html {
     padding: 0;
 }
 
-.navItem {
-    /* position: relative; */
-    /* Nicht nötig, wenn keine Dropdown-Untermenüs vorhanden sind */
-}
+
 
 .navLink {
     text-decoration: none;
@@ -323,9 +320,9 @@ html {
 
 /* Studentendaten */
 .studentDetailContainer {
-    max-width: 60rem; 
+    max-width: 60rem;
     margin: 0 auto;
-    padding: 1.5rem; 
+    padding: 1.5rem;
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
@@ -341,11 +338,11 @@ html {
     font-size: 1.1rem;
     line-height: 2.0;
 }
-  
+
 .studentInfo p {
     margin: 0.4rem 0;
 }
-  
+
 .studentInfo strong {
     color: #d84315;
     font-weight: 600;
@@ -359,13 +356,14 @@ html {
     padding-left: 1.25rem;
     margin-bottom: 1.5rem;
 }
+
 .moduleListItem {
     color: black;
     margin-bottom: 0.5rem;
     align-items: center;
     justify-content: space-between;
     font-size: 1.1rem;
-    list-style-type: disc; 
+    list-style-type: disc;
 }
 
 .moduleListItem button {
@@ -380,7 +378,7 @@ html {
     text-decoration: underline;
     transition: color 0.2s ease;
 }
-  
+
 .removeButton:hover {
     color: #a11b1b;
 }
@@ -394,8 +392,8 @@ html {
     font-weight: 600;
     transition: background-color 0.2s ease;
     margin-top: 1rem;
-  }
-  
+}
+
 .addModuleButton:hover {
     background-color: #1e40af;
 }
@@ -411,18 +409,18 @@ html {
     transition: background-color 0.2s ease;
     margin-top: 1rem;
 }
-  
+
 .cancelButton:hover {
     background-color: #4b5563;
 }
 
 /* ModuleForm */
-.headerModuleForm{
+.headerModuleForm {
     color: #d84315;
     padding-bottom: 1rem;
     font-weight: 600;
     font-size: 1.1rem;
-    
+
 }
 
 .addModuleForm {
@@ -446,22 +444,22 @@ html {
     padding-left: 0.5rem;
     height: 3rem;
     width: 10rem;
-    border: 2px solid black;  
-    border-color: black;     
+    border: 2px solid black;
+    border-color: black;
     box-shadow: black;
     border-radius: 4px;
     color: black;
 }
 
-.formInputWide{
+.formInputWide {
     width: 18rem;
 }
 
 .formInput:focus {
-    outline: 2px solid rgb(37, 99, 235); 
-    outline-offset: 2px;        
+    outline: 2px solid rgb(37, 99, 235);
+    outline-offset: 2px;
     box-shadow: 0 0 0 4px rgb(30, 70, 179, 0.25);
-    
+
 }
 
 .formError {
@@ -481,7 +479,7 @@ html {
     border-collapse: collapse;
 }
 
-.table td, 
+.table td,
 .table th,
 .table tr {
     border: 1px solid black;
@@ -491,7 +489,7 @@ html {
 }
 
 .tableHead {
-    color: #d84315;           
+    color: #d84315;
     font-weight: 600;
     padding: 0.5rem 1rem;
 }
@@ -501,6 +499,3 @@ html {
     border: 1px solid black;
     background-color: white;
 }
-
-  
-
