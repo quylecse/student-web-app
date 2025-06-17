@@ -10,6 +10,7 @@ import {
     FaUserGraduate, // Symbol für Student Management
     FaInfoCircle,   // Symbol für Über Uns / Team
     FaEnvelope,
+    FaPlus
 } from 'react-icons/fa';
 
 export default function StudentDetailPage() {
@@ -123,8 +124,18 @@ export default function StudentDetailPage() {
                         </div>
                         <ul className={styles.navbarNav}>
                             <li className={styles.navItem}>
+                            <Link href="/students/new" className={styles.navLink}>
+                                <FaPlus className={styles.navIcon} /> neue Student hinzufügen
+                            </Link>
+                            </li>
+                            <li className={styles.navItem}>
+                                <Link href="/students" className={styles.navLink}>
+                                    <FaInfoCircle className={styles.navIcon} /> Studentliste
+                                </Link>
+                            </li>
+                            <li className={styles.navItem}>
                             <Link href="/team" className={styles.navLink}>
-                                <FaInfoCircle className={styles.navIcon} /> About Us
+                                <FaInfoCircle className={styles.navIcon} /> Über uns
                             </Link>
                             </li>
                         </ul>
