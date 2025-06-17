@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
       <nav className={styles.navbar}>
         <div className={styles.navbarContainer}>
           <div className={styles.navBrand}>
-            <Link href="/">Student Management</Link>
+            <Link href="/">Home</Link>
           </div>
           <ul className={styles.navbarNav}>
             {/* Abschnitt Student Management: Verlinkt zur ID des Abschnitts auf derselben Seite */}
@@ -36,16 +36,9 @@ const HomePage: React.FC = () => {
                 <FaUserGraduate className={styles.navIcon} /> Student Management
               </Link>
             </li>
-
-            {/* Abschnitt Modulverwaltung: Verlinkt zur ID des Abschnitts auf derselben Seite */}
-            <li className={styles.navItem}>
-              <Link href="#module-management" className={styles.navLink}>
-                <FaBoxes className={styles.navIcon} /> Module Management
-              </Link>
-            </li>
             <li className={styles.navItem}>
               <Link href="/team" className={styles.navLink}>
-                <FaInfoCircle className={styles.navIcon} /> About Us
+                <FaInfoCircle className={styles.navIcon} /> Über uns
               </Link>
             </li>
           </ul>
@@ -81,37 +74,6 @@ const HomePage: React.FC = () => {
               <FaPlus className={styles.buttonIcon} />
               <span>Add Student</span>
             </Link>
-            <Link href="/students/show-student-by-id" className={styles.actionButton}>
-              <FaSearch className={styles.buttonIcon} />
-              <span>Show Student by ID</span>
-            </Link>
-            <Link href="/students/update" className={styles.actionButton}>
-              <FaEdit className={styles.buttonIcon} />
-              <span>Update Student Info</span>
-            </Link>
-          </div>
-        </section>
-
-        {/* Abschnitt Modulverwaltung: ID wurde HINZUGEFÜGT */}
-        <section id="module-management" className={styles.section}>
-          <h2 className={styles.sectionHeading}>Manage Modules</h2>
-          <div className={styles.buttonGrid}>
-            <Link href="/modules/student" className={styles.actionButton}>
-              <FaList className={styles.buttonIcon} />
-              <span>List Modules of Student by ID</span>
-            </Link>
-            <Link href="/modules/add" className={styles.actionButton}>
-              <FaPlus className={styles.buttonIcon} />
-              <span>Add Modules to Student by ID</span>
-            </Link>
-            <Link href="/modules/remove" className={styles.actionButton}>
-              <FaTrash className={styles.buttonIcon} />
-              <span>Remove Module from Student by Student ID and Module ID</span>
-            </Link>
-            <Link href="/modules" className={styles.actionButton}>
-              <FaBook className={styles.buttonIcon} />
-              <span>View All Modules</span>
-            </Link>
           </div>
         </section>
       </main>
@@ -125,15 +87,9 @@ const HomePage: React.FC = () => {
           <Link href="/contact">
             <FaEnvelope className={styles.footerIcon} /> Kontakt
           </Link>
-          <Link href="/privacy">
-            <FaShieldAlt className={styles.footerIcon} /> Datenschutz
-          </Link>
-          <Link href="/terms">
-            <FaFileContract className={styles.footerIcon} /> Nutzungsbedingungen
-          </Link>
         </div>
         <p className={styles.copyright}>
-          &copy;2024 Student Management Team. Alle Rechte vorbehalten.
+          &copy;2025 Gruppe 16. Alle Rechte vorbehalten.
         </p>
       </footer>
     </div>

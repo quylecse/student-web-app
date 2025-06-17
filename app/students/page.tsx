@@ -57,7 +57,7 @@ export default function StudentsPage() {
                 <nav className={styles.navbar}>
                     <div className={styles.navbarContainer}>
                         <div className={styles.navBrand}>
-                            <Link href="/">Student Management</Link>
+                            <Link href="/">Home</Link>
                         </div>
                         <ul className={styles.navbarNav}>
                             <li className={styles.navItem}>
