@@ -57,7 +57,7 @@ html {
 }
 
 .navBrand a:hover {
-    color: #007bff;
+    color: #030303;
 }
 
 .navbarNav {
@@ -129,7 +129,7 @@ html {
 }
 
 .heroTitle {
-    color: #fffde7;
+    color: #ffffff;
     font-size: 3em;
     text-align: center;
     margin: 0;
@@ -143,6 +143,7 @@ html {
     padding: 0 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #fffef9;
 }
 
 .section {
@@ -223,7 +224,7 @@ html {
 }
 
 .footerLinks a:hover {
-    color: #007bff;
+    color: #000000;
 }
 
 .footerIcon {
@@ -320,15 +321,16 @@ html {
 
 /* Studentendaten */
 .studentDetailContainer {
-    max-width: 60rem;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
     padding: 1.5rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-    min-height: 100vh;
+    background-color: #fffef9;
+    box-shadow: none; /* Optional: kein Schatten im Vollbild */
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Inhalte oben starten */
+    align-items: stretch;
+    overflow: auto;
 }
 
 .studentInfo {
@@ -351,14 +353,14 @@ html {
 
 /* Module */
 .moduleList {
-    color: black;
+    color: rgb(151, 26, 26);
     list-style-type: disc;
     padding-left: 1.25rem;
     margin-bottom: 1.5rem;
 }
 
 .moduleListItem {
-    color: black;
+    color: rgb(0, 0, 0);
     margin-bottom: 0.5rem;
     align-items: center;
     justify-content: space-between;
@@ -395,7 +397,7 @@ html {
 }
 
 .addModuleButton:hover {
-    background-color: #1e40af;
+    background-color: #000000;
 }
 
 .cancelButton {
@@ -477,15 +479,16 @@ html {
 .table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #fffef9;
 }
 
 .table td,
 .table th,
 .table tr {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     padding: 0.5rem;
     text-align: left;
-    background-color: white;
+    background-color:#fffef9;
 }
 
 .tableHead {
@@ -496,6 +499,6 @@ html {
 
 .tableCellLink {
     padding: 0.5rem;
-    border: 1px solid black;
+    border: 1px solid #fffef9;
     background-color: white;
 }

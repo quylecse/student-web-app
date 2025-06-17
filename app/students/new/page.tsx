@@ -119,11 +119,13 @@ export default function NewStudentPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-6">
-          <h1 className="text-2xl font-bold mb-6">Neues Studentenprofil hinzufügen</h1>
-          {apiError && <div className="text-red-500 mb-4">{apiError}</div>}
-          {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
-          <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="w-screen h-screen bg-[#fffef9] flex items-center justify-center p-6 overflow-y-auto text-black">
+
+        <div className="max-w-2xl w-full bg-[#fffef9] rounded-lg shadow-md p-6">
+        <h1 className="text-2xl font-bold mb-6 text-[#d84315]">Neues Studentenprofil hinzufügen</h1>
+        {apiError && <div className="text-red-500 mb-4">{apiError}</div>}
+        {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
+        <form onSubmit={handleSubmit} className="space-y-6">
             {/* First Name */}
             <div>
               <label htmlFor="first_name" className="block text-sm font-medium">
@@ -207,7 +209,7 @@ export default function NewStudentPage() {
               <button
                 type="button"
                 onClick={addModule}
-                className="text-blue-600 hover:text-blue-800"
+                className="text-[#d84315] hover:text-[#a11b1b]"
               >
                 + Modul hinzufügen
               </button>
@@ -217,14 +219,14 @@ export default function NewStudentPage() {
             <div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-[#d84315] text-white py-2 px-4 rounded-md hover:bg-[#a11b1b] focus:outline-none focus:ring-2 focus:ring-[#a11b1b]"
               >
                 Save
               </button>
             </div>
           </form>
         </div>
-      );
-
+      </div>
+    );
 
 }
