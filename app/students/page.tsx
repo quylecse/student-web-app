@@ -62,7 +62,7 @@ export default function StudentsPage() {
                         <ul className={styles.navbarNav}>
                             <li className={styles.navItem}>
                             <Link href="/team" className={styles.navLink}>
-                                <FaInfoCircle className={styles.navIcon} /> About Us
+                                <FaInfoCircle className={styles.navIcon} /> Über uns
                             </Link>
                             </li>
                         </ul>
