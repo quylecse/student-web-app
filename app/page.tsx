@@ -79,10 +79,9 @@ const HomePage: React.FC = () => {
           <Link href="/contact">
             <FaEnvelope className={styles.footerIcon} /> Kontakt
           </Link>
-
         </div>
         <p className={styles.copyright}>
-          &copy;2024 Student Management Team.
+          &copy;Gruppe 16.
         </p>
       </footer>
     </div>
